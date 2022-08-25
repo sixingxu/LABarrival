@@ -26,19 +26,22 @@ $( document ).ready(function() {
         setInterval(()=>{
             randomArr.forEach(item=>{
                  setTimeout(function(){
-                    $(`#entry-${item}`).toggle("slide", {direction:'left'}, {duration:'1000'}, function(){
-                    $(`#entry-${item+40}`).toggle("slide", {direction:'right'}, {duration:'1000'})
+                    $(`#entry-${item}`).toggle("slide", {direction:'left'}, {duration:'500'}, function(){
+                    $(`#entry-${item+40}`).toggle("slide", {direction:'right'}, {duration:'500'})
                     })
-                },  Math.floor(Math.random() * 2000))
+                },  Math.floor(Math.random() * 500))
             })
+              
+            
+
             setTimeout(()=>{
                 randomArr.forEach(item=>{
                     setTimeout(function(){
-                       $(`#entry-${item+40}`).toggle("slide", {direction:'right'}, {duration:'1000'}, function(){
-                       $(`#entry-${item}`).toggle("slide", {direction:'left'}, {duration:'1000'})
+                       $(`#entry-${item+40}`).toggle("slide", {direction:'right'}, {duration:'500'}, function(){
+                       $(`#entry-${item}`).toggle("slide", {direction:'left'}, {duration:'500'})
                        })
-                   },  Math.floor(Math.random() * 2000))
-                })
+                   },  Math.floor(Math.random() * 500))
+               })
             }, 8000)
         }, 16000)
 
