@@ -12,16 +12,35 @@ $( document ).ready(function() {
         console.log(randomArr)
 
         // shuffle the display every 8 seconds
+        // setInterval(()=>{
+        //     randomArr.forEach(item=>{
+        //         console.log(item)
+        //          setTimeout(function(){
+        //             $(`#entry-${item}`).toggle("slide", {direction:'left'}, {duration:'1000'}, function(){
+        //             $(`#entry-${item+40}`).toggle("slide", {direction:'right'}, {duration:'1000'})
+        //             })
+        //         },  Math.floor(Math.random() * 2000))
+        //     })
+        // }, 8000)
+
         setInterval(()=>{
             randomArr.forEach(item=>{
-                console.log(item)
                  setTimeout(function(){
-                    $(`#entry-${item}`).toggle("slide", {direction:'left'}, {duration:'slow'}, function(){
-                        $(`#entry-${item+40}`).toggle("slide", {direction:'right'}, {duration:'slow'})
+                    $(`#entry-${item}`).toggle("slide", {direction:'left'}, {duration:'1000'}, function(){
+                    $(`#entry-${item+40}`).toggle("slide", {direction:'right'}, {duration:'1000'})
                     })
                 },  Math.floor(Math.random() * 2000))
             })
-        }, 8000)
+            setTimeout(()=>{
+                randomArr.forEach(item=>{
+                    setTimeout(function(){
+                       $(`#entry-${item+40}`).toggle("slide", {direction:'right'}, {duration:'1000'}, function(){
+                       $(`#entry-${item}`).toggle("slide", {direction:'left'}, {duration:'1000'})
+                       })
+                   },  Math.floor(Math.random() * 2000))
+                })
+            }, 8000)
+        }, 16000)
 
 
 
