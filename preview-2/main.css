@@ -1,0 +1,189 @@
+	/* Averia */
+  @import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+   
+html{
+  margin: 0;
+  padding: 0;
+  overflow:hidden;
+  height:100%;
+  width: 100vw;
+  position:fixed;
+  min-width: fit-content;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #212121;
+  /* background: linear-gradient(#df725d, #cc4b51, #7f4855, #463e50, #233e51); */
+  height:100%;
+  width: 100vw;
+  min-width: fit-content;
+  font-family: 'Averia Serif Libre';
+	font-weight:300;
+  overflow: auto;
+  /* -webkit-filter: url(#wavy1);
+  filter: url(#wavy1); */
+}
+
+.container{
+  display:flex;
+  flex-direction: column;
+  width:90vw;
+  height:90%;
+  margin-top:5%;
+  margin-bottom:5%;
+  margin-left:auto;
+  margin-right:auto;
+  justify-content:center;
+  align-items: center;
+}
+
+.logo-container{
+  width:100%;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:5%;
+  margin-bottom:10%;
+  z-index:999;
+}
+
+.logo{
+  width:25%;
+  margin-left:auto;
+  margin-right:auto;
+  z-index:999;
+  font-size:200px;
+  color:red;
+  font-weight: bold;
+  text-align:center;
+  /* mix-blend-mode: hard-light; */
+  /* filter:drop-shadow(5px 5px 1px white); */
+  /* background-image: url(imgs/lab-logo-wavy-light.png);
+  background-repeat: no-repeat;
+  background-size:cover; */
+}
+
+.logo img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  text-align:center;
+  /* margin-bottom: 11%;
+  filter:drop-shadow(60px 60px 1px white);
+  filter:drop-shadow(15px 15px 20px rgba(225,225,225,0.6)); */
+}
+
+
+.main-title{
+  font-size:150px;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:5%;
+  margin-bottom:5%;
+  text-align: center;
+  color:black;
+  background:rgb(95, 254, 241);
+  border-radius:100px;
+  padding:1%;
+  width:50%;
+}
+
+
+.nft-status{
+  width:100%;
+  text-align:center;
+  font-size:150px;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-around;
+  color:white;
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+  transition:all 1s;
+}
+
+
+.nft-display .nft-image {
+  position: relative;
+  width:80%;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:0;
+  padding-top:0;
+  
+}
+
+.nft-display img {
+  /* width:auto;
+  height:80%; */
+  /* filter:drop-shadow(0px 0px 100px rgb(115 155 149)); */
+  /* box-shadow: 0px 0px 200px rgb(115 155 149); */
+  /* border:20px solid rgb(106, 255, 233); */
+}
+
+.splide__slide img {
+  width: auto;
+  height: 80%;
+  object-fit: cover;
+}
+
+.nft-display {
+  width:100%;
+  height:75%;
+  /* border-radius: 40px;
+  background:rgb(187, 228, 228);
+  border:5px solid black;
+  margin-bottom:5vh; */
+}
+
+
+.message {
+  background: rgb(128, 218, 162);
+  border: 5px solid black;
+  width:100%;
+  /* background-image: url(../imgs/wavy.svg);
+  background-repeat: no-repeat;
+  background-size:cover; */
+  border: 5px solid black;
+  padding-top:3%;
+  padding-bottom:3%;
+  border-radius:40px;
+
+}
+
+.visitor-name{
+  margin-bottom:10%;
+}
+
+.nft-meta-data{
+  display:flex;
+  flex-direction: row;
+  width:100%;
+  justify-content:center;
+  align-items: center;
+  font-size:80px;
+  color:white;
+}
+
+.meta-data-text{
+  width:50%;
+}
+
+.meta-data-text span{
+  background:rgb(95, 254, 241);
+  padding:1%;
+  margin-bottom:1%;
+  color:black;
+}
+
+.nft-logo{
+
+}
+
+.nft-logo img{
+  height:100%;
+}
+
