@@ -14,7 +14,8 @@ html{
 body {
   margin: 0;
   padding: 0;
-  background-color: #f1f1f1;
+  background-color: #212121;
+  /* background-color: #f1f1f1; */
   /* background: linear-gradient(#df725d, #cc4b51, #7f4855, #463e50, #233e51); */
   height:100%;
   width: 100vw;
@@ -39,8 +40,10 @@ body {
 }
 
 .main-title{
-  font-size:100px;
+  font-size:150px;
   margin-bottom:5%;
+  text-align: center;
+  color:white;
 }
 
 
@@ -48,7 +51,6 @@ body {
 #time-header, #visitor-header, #status-header{
   width:30%;
   text-align: center;
-  background: grey;
   color:white;
   /* border-radius: 40px;
   border:2px solid black; */
@@ -60,6 +62,8 @@ body {
   width:100%;
   justify-content: space-between;
   font-size:55px;
+  box-shadow:0px 0px 200px rgba(95, 254, 241,1);
+  
 }
 
 .header, .entry{
@@ -76,10 +80,14 @@ body {
   background: grey;
   /* border:2px solid black; */
   border-bottom: 2px solid whitesmoke;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
+  /* border-top-left-radius: 40px;
+  border-top-right-radius: 40px; */
 
 }
+/* 
+.batch{
+  box-shadow:0px 0px 100px rgba(95, 254, 241,1);
+} */
 
 
 .entry{
@@ -121,30 +129,21 @@ body {
 .viewed{
   background: rgb(129, 251, 102)
 }
+
 .minted{
   background: rgb(95, 254, 241)
 }
+
 .time, .visitor, .status{
   width:30%;
   text-align: center;
 }
 
 
-
-
-#minted .message {
-  background: rgb(128, 218, 162);
-  width:65%;
-  /* background-image: url(../imgs/wavy.svg);
-  background-repeat: no-repeat;
-  background-size:cover; */
-  border: 5px solid black;
-  padding-top:3%;
-  padding-bottom:3%;
-  border-radius:40px;
-  margin-bottom:0 
-}
-
-#ready .message div{
-  margin-bottom:0 !important;
+.toggle-status{
+  border:5px solid black;
+  font-size:100px;
+  padding:3%;
+  margin-top:3%;
+  background:white;
 }

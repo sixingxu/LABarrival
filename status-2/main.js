@@ -1,49 +1,77 @@
 
 
 $( document ).ready(function() {
+    var Arr = Array.from(Array(40).keys())
+    var randomArr = shuffleArr(Arr)
+    console.log(randomArr)
+
+
+    var currentPage = '1'
+    var randomEntry
+  //shuffle page every 15 sec
+
+  setTimeout(()=>{
+    randomArr.forEach(item=>{
+        setTimeout(function(){
+           $(`#entry-${item}`).toggle("slide", {direction:'left'}, {duration:'800'}, function(){
+           $(`#entry-${item+40}`).toggle("slide", {direction:'right'}, {duration:'800'})
+           })
+       },  Math.floor(Math.random() * 200))
+   })
+   currentPage = 2;
+   console.log(currentPage)
+}, 15000)
+
+    setInterval(()=>{
+        randomArr.forEach(item=>{
+             setTimeout(function(){
+                $(`#entry-${item+40}`).toggle("slide", {direction:'left'}, {duration:'800'}, function(){
+                $(`#entry-${item}`).toggle("slide", {direction:'right'}, {duration:'800'})
+                })
+            },  Math.floor(Math.random() * 200))
+        })
+        currentPage = 1;
+        console.log(currentPage)
+          
+
+        setTimeout(()=>{
+            randomArr.forEach(item=>{
+                setTimeout(function(){
+                   $(`#entry-${item}`).toggle("slide", {direction:'right'}, {duration:'800'}, function(){
+                   $(`#entry-${item+40}`).toggle("slide", {direction:'left'}, {duration:'800'})
+                   })
+               },  Math.floor(Math.random() * 200))
+            
+           })
+           currentPage = 2;
+           console.log(currentPage)
+        }, 15000)
+    }, 30000)
+
+        //change status
+        $('.toggle-status').click(()=>{
+            console.log('current page: '+currentPage)
+            if (currentPage == 1){
+                randomEntry = Math.floor(Math.random()*40)
+            }else{
+                randomEntry = Math.floor(Math.random()*40)+40
+            }
+            console.log($(this))
+            $(`#entry-${randomEntry}`).slideToggle(function(){
+                $(`#entry-${randomEntry}`).addClass('minted')
+                $(`#entry-${randomEntry}`).slideToggle()
+                })
+    
+        })
+
+
+
     $.getJSON("test-list.json", function(data) {
         eps = data;
 
         displayStatus()
 
         
-        var Arr = Array.from(Array(40).keys())
-        var randomArr = shuffleArr(Arr)
-        console.log(randomArr)
-
-        // shuffle the display every 8 seconds
-        // setInterval(()=>{
-        //     randomArr.forEach(item=>{
-        //         console.log(item)
-        //          setTimeout(function(){
-        //             $(`#entry-${item}`).toggle("slide", {direction:'left'}, {duration:'1000'}, function(){
-        //             $(`#entry-${item+40}`).toggle("slide", {direction:'right'}, {duration:'1000'})
-        //             })
-        //         },  Math.floor(Math.random() * 2000))
-        //     })
-        // }, 8000)
-
-        setInterval(()=>{
-            randomArr.forEach(item=>{
-                 setTimeout(function(){
-                    $(`#entry-${item}`).toggle("slide", {direction:'left'}, {duration:'500'}, function(){
-                    $(`#entry-${item+40}`).toggle("slide", {direction:'right'}, {duration:'500'})
-                    })
-                },  Math.floor(Math.random() * 500))
-            })
-              
-            
-
-            setTimeout(()=>{
-                randomArr.forEach(item=>{
-                    setTimeout(function(){
-                       $(`#entry-${item+40}`).toggle("slide", {direction:'right'}, {duration:'500'}, function(){
-                       $(`#entry-${item}`).toggle("slide", {direction:'left'}, {duration:'500'})
-                       })
-                   },  Math.floor(Math.random() * 500))
-               })
-            }, 8000)
-        }, 16000)
 
 
 

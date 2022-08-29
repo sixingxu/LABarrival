@@ -48,7 +48,6 @@ body {
 #time-header, #visitor-header, #status-header{
   width:30%;
   text-align: center;
-  background: grey;
   color:white;
   /* border-radius: 40px;
   border:2px solid black; */
@@ -86,6 +85,7 @@ body {
   /* margin-top:1%;
   margin-bottom:1%; */
   background: rgb(128, 218, 162);
+  transition:all 1s;
   /* border-bottom: 2px solid whitesmoke; */
   /* border-left:2px solid black;
   border-right:2px solid black; */
@@ -116,13 +116,19 @@ body {
 }
 
 .new{
-  background: rgb(73, 147, 44)
+  background: rgb(73, 147, 44);
+  transition:all 1s;
+
 }
 .viewed{
-  background: rgb(129, 251, 102)
+  background: rgb(129, 251, 102);
+  transition:all 1s;
+
 }
 .minted{
-  background: rgb(95, 254, 241)
+  background: rgb(95, 254, 241);
+  transition:all 1s;
+
 }
 .time, .visitor, .status{
   width:30%;
@@ -132,19 +138,16 @@ body {
 
 
 
-#minted .message {
-  background: rgb(128, 218, 162);
-  width:65%;
-  /* background-image: url(../imgs/wavy.svg);
-  background-repeat: no-repeat;
-  background-size:cover; */
-  border: 5px solid black;
-  padding-top:3%;
-  padding-bottom:3%;
-  border-radius:40px;
-  margin-bottom:0 
+
+.toggle-status{
+  border:5px solid black;
+  font-size:100px;
+  padding:3%;
+  margin-top:3%;
+  background:white;
 }
 
-#ready .message div{
-  margin-bottom:0 !important;
+@keyframes fade-in {
+  from {opacity:0}
+  to {opacity:1}
 }

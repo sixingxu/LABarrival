@@ -30,7 +30,7 @@ body {
   display:flex;
   flex-direction: column;
   width:90vw;
-  height:90%;
+  height:95%;
   margin-top:5%;
   margin-bottom:5%;
   margin-left:auto;
@@ -63,7 +63,8 @@ body {
 }
 
 .logo img{
-  width: 90%;
+  width: 80%;
+  margin-bottom:10%;
   height: auto;
   object-fit: cover;
   text-align:center;
@@ -85,11 +86,11 @@ body {
 .nft-status{
   width:100%;
   text-align:center;
-  font-size:150px;
+  font-size:180px;
   height:100%;
   display:flex;
   flex-direction:column;
-  justify-content: space-around;
+  justify-content: flex-end;
   color:white;
   filter: blur(0px);
   -webkit-filter: blur(0px);
@@ -107,18 +108,16 @@ body {
   
 }
 
-.nft-display img {
-  /* width:auto;
-  height:80%; */
-  /* filter:drop-shadow(0px 0px 100px rgb(115 155 149)); */
-  /* box-shadow: 0px 0px 200px rgb(115 155 149); */
-  /* border:20px solid rgb(106, 255, 233); */
+.nft-image{
+  background:rgb(95, 254, 241);
 }
 
 .splide__slide img {
-  width: auto;
+  width: 100%;
   height: 80%;
   object-fit: cover;
+  /* border:20px solid rgb(95, 254, 241); */
+  filter:drop-shadow(0px 0px 100px rgba(95, 254, 241,0.6));
 }
 
 .nft-display {
@@ -130,23 +129,21 @@ body {
   margin-bottom:5vh; */
 }
 
-
-.message {
-  background: rgb(128, 218, 162);
-  border: 5px solid black;
-  width:100%;
-  /* background-image: url(../imgs/wavy.svg);
-  background-repeat: no-repeat;
-  background-size:cover; */
-  border: 5px solid black;
-  padding-top:3%;
-  padding-bottom:3%;
-  border-radius:40px;
-
+.nft-status span{
+  width:50%;
+  margin-left:auto;
+  margin-right:auto;
+  background:rgb(95, 254, 241);
+  padding:1%;
+  margin-bottom:1%;
+  color:black;
+  border-radius: 100px;
 }
 
+
+
 .visitor-name{
-  margin-bottom:10%;
+  margin-bottom:12%;
 }
 
 .nft-meta-data{
@@ -161,13 +158,7 @@ body {
 
 .meta-data-text{
   width:50%;
-}
-
-.meta-data-text span{
-  background:rgb(95, 254, 241);
-  padding:1%;
-  margin-bottom:1%;
-  color:black;
+  text-align: left;
 }
 
 .nft-logo{
@@ -175,6 +166,6 @@ body {
 }
 
 .nft-logo img{
-  height:100%;
+  height:60%;
 }
 

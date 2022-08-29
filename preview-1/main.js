@@ -19,13 +19,13 @@ $( document ).ready(function() {
                 $('.logo').fadeIn('slow');
                 $('.nft-status').css('filter','blur(50px)')
                 $('.nft-status').css('-webkit-filter','blur(50px)')
-            },17000)
+            },30000)
     
             setInterval(()=>{
                 $('.logo').fadeOut('slow');
                 $('.nft-status').css('filter','blur(0px)')
                 $('.nft-status').css('-webkit-filter','blur(0px)')
-            },20000)
+            },35000)
  
 
 
@@ -33,21 +33,14 @@ $( document ).ready(function() {
             var currentIndex = orderArr.indexOf(item)
             //$('.name-display').append(`<span class="visitor-name" id="visitor-${mintedArr.indexOf(item)}">${item.Visitor}</span>`)
             //$('.visitor-name').first().show();
-            if((currentIndex+1)%3 ==0){
-                    $('.splide__list').append(`
-                    <li class="splide__slide" data-splide-interval="8000">
-                    <div class="visitor-name" id="visitor-${orderArr.indexOf(item)}"><b>${mintedArr[currentIndex].Visitor}'s TRUE NAME:</b></div>
-                    <div class="nft-image">
-                    <img src="imgs/truename-mockup.jpg">
-                    </div></li>`)  
-            }else{
+
                 $('.splide__list').append(`
-                <li class="splide__slide" data-splide-interval="8000">
+                <li class="splide__slide">
                 <div class="visitor-name" id="visitor-${orderArr.indexOf(item)}"><b>${mintedArr[currentIndex].Visitor}'s TRUE NAME:</b></div>
                 <div class="nft-image">
                 <img src="imgs/truename-mockup.jpg">
                 </div></li>`)
-            }
+        
 
 
             // $('.nft-image').first().show();
@@ -58,6 +51,7 @@ $( document ).ready(function() {
             type   : 'loop',
             perPage: 1,
             autoplay:true,
+            interval:12000,
             cover:true,
             pagination:false,
             arrows:false,

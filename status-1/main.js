@@ -1,26 +1,80 @@
 
 
 $( document ).ready(function() {
+
+            
+    var Arr = Array.from(Array(40).keys())
+    var randomArr = shuffleArr(Arr)
+    console.log(randomArr)
+
+
+        // shuffle the display every 15 seconds
+    var currentPage = '1'
+    var randomEntry
+    setInterval(()=>{
+        randomArr.forEach(item=>{
+            setTimeout(function(){
+                $(`#entry-${item}`).slideToggle('slow')
+                $(`#entry-${item+40}`).slideToggle('slow')
+            },  Math.floor(Math.random() * 2000))
+        })
+        if (currentPage == 1){
+            currentPage = 2
+        }else{
+            currentPage = 1
+        }
+        console.log(currentPage)
+    }, 15000)
+
+    //change status
+    var currentStatus
+        $('body').click(()=>{
+            if (currentPage == 1){
+                randomEntry = Math.floor(Math.random()*40)
+            }else{
+                randomEntry = Math.floor(Math.random()*40)+40
+            }
+            console.log(randomEntry)
+            currentStatus = $(`#status-${randomEntry}`).text()
+            console.log(currentStatus)
+
+            if(currentStatus==='New!'){
+                $(`#entry-${randomEntry}`).toggle("slide", {direction:'left'}, {duration:'800'}, function(){
+                    $(`#entry-${randomEntry}`).addClass('viewed')
+                    $(`#status-${randomEntry}`).text('Viewed')
+                    $(`#entry-${randomEntry}`).toggle("slide", {direction:'right'}, {duration:'800'})
+                    })
+            }
+
+            if(currentStatus==='Viewed'){
+                $(`#entry-${randomEntry}`).toggle("slide", {direction:'left'}, {duration:'800'}, function(){
+                    $(`#entry-${randomEntry}`).addClass('minted')
+                    $(`#status-${randomEntry}`).text('Minted')
+                    $(`#entry-${randomEntry}`).toggle("slide", {direction:'right'}, {duration:'800'})
+                    })
+            }
+
+            if(currentStatus==='Minted'){
+
+            }
+
+
+
+
+        })
+
+
+      
+
+
+
+
+
+
     $.getJSON("test-list.json", function(data) {
         eps = data;
 
         displayStatus()
-
-        
-        var Arr = Array.from(Array(40).keys())
-        var randomArr = shuffleArr(Arr)
-        console.log(randomArr)
-
-        // shuffle the display every 8 seconds
-        setInterval(()=>{
-            randomArr.forEach(item=>{
-                console.log(item)
-                 setTimeout(function(){
-                    $(`#entry-${item}`).slideToggle('slow')
-                    $(`#entry-${item+40}`).slideToggle('slow')
-                },  Math.floor(Math.random() * 2000))
-            })
-        }, 8000)
 
 
 
@@ -62,7 +116,7 @@ $( document ).ready(function() {
         $(`#entry-${i}`).append(`<div class="visitor" id="visitor-${i}">${eps[i].Visitor}</div>`)
         $(`#entry-${i+40}`).append(`<div class="visitor" id="visitor-${i+40}">${eps[i+40].Visitor}</div>`)
         $(`#entry-${i}`).append(`<div class="status" id="status-${i}">${eps[i].Status}</div>`)
-        $(`#entry-${i+40}`).append(`<div class="status" id="status-${i}">${eps[i+40].Status}</div>`)
+        $(`#entry-${i+40}`).append(`<div class="status" id="status-${i+40}">${eps[i+40].Status}</div>`)
 
        if(eps[i].Status=='Viewed'){
            $(`#entry-${i}`).addClass('viewed')
@@ -71,16 +125,16 @@ $( document ).ready(function() {
            $(`#entry-${i}`).addClass('minted')
        }
 
-       if(eps[i+50].Status=='Viewed'){
+       if(eps[i+40].Status=='Viewed'){
         $(`#entry-${i+40}`).addClass('viewed')
     }
-    if(eps[i+50].Status=='Minted'){
+    if(eps[i+40].Status=='Minted'){
         $(`#entry-${i+40}`).addClass('minted')
     }
-       if(i==39){
-        $(`#entry-${i}`).addClass('last-entry')
-           $(`#entry-${i+40}`).addClass('last-entry')
-       }
+    //    if(i==39){
+    //     $(`#entry-${i}`).addClass('last-entry')
+    //        $(`#entry-${i+40}`).addClass('last-entry')
+    //    }
     }
  }
 
